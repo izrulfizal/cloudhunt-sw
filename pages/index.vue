@@ -66,7 +66,7 @@
   
       <!-- Footer -->
       <footer class="footer">
-        <p>&copy; 2025 CodeSprint Hackathon. All rights reserved.</p>
+        <p>&copy; 2025 CloudHunt. All rights reserved.</p>
       </footer>
     </div>
   </template>
