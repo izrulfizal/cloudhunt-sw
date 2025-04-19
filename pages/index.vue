@@ -3,7 +3,7 @@
       <!-- Hero Section -->
       <section class="hero">
         <h1>CloudHunt 2025</h1>
-        <p>April 30 – May 1, 2025 | Virtual Event</p>
+        <p>April 30 – May 1, 2025 | From Command Line to Champion</p>
         <div class="countdown">
           <p>Starts in:</p>
           <h2>{{ days }}d {{ hours }}h {{ minutes }}m {{ seconds }}s</h2>
