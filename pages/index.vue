@@ -63,7 +63,33 @@
         <h2>Ready to Code?</h2>
         <a class="register-btn" href="https://your-registration-form-link.com" target="_blank">Register Here</a>
       </section>
-  
+
+      <section class="faq-section">  
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div v-for="faq in faqs" :key="faq.id" class="faq-item">
+        <button
+          class="faq-question"
+          @click="toggleFaq(faq.id)"
+          :aria-expanded="openFaqId === faq.id"
+          :aria-controls="'faq-answer-' + faq.id"
+        >
+          <span>{{ faq.id }}. {{ faq.question }}</span>
+          <span class="faq-toggle">{{ openFaqId === faq.id ? '-' : '+' }}</span>
+        </button>
+        <div
+          :id="'faq-answer-' + faq.id"
+          class="faq-answer"
+          :class="{ open: openFaqId === faq.id }"
+          role="region"
+          :aria-hidden="openFaqId !== faq.id"
+        >
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+      </section>
+
       <!-- Footer -->
       <footer class="footer">
         <p>&copy; 2025 CloudHunt. All rights reserved.</p>
@@ -101,6 +127,54 @@
     interval = setInterval(updateCountdown, 1000)
   })
   onUnmounted(() => clearInterval(interval))
+
+// --- Reactive State ---
+const openFaqId = ref(null);
+
+// --- FAQ Data ---
+// Updated with random questions and answers
+const faqs = ref([
+  {
+    id: 1,
+    question: 'What is the airspeed velocity of an unladen swallow?',
+    answer: 'This is a classic question! The answer depends on whether you mean an African or European swallow. European swallows are estimated to fly at around 11 meters per second, or 24 miles per hour.',
+  },
+  {
+    id: 2,
+    question: 'Why is the sky blue?',
+    answer: 'The sky appears blue because of a phenomenon called Rayleigh scattering. Sunlight reaching Earth\'s atmosphere is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves.',
+  },
+  {
+    id: 3,
+    question: 'Can I use this component in my project?',
+    answer: 'Absolutely! This Vue component is designed to be easily integrated. Just make sure you have Vue set up, copy the code, and adapt the styling or content as needed for your specific use case.',
+  },
+  {
+    id: 4,
+    question: 'How does the accordion effect work?',
+    answer: 'It works by conditionally rendering or styling the answer block. When you click the question, a state variable (`openFaqId`) is updated. CSS rules then use this state (via a class like `.open`) to transition the `max-height` and `opacity` of the answer container, creating the smooth expand/collapse animation.',
+  },
+  {
+    id: 5,
+    question: 'If a tree falls in the forest and no one is around to hear it, does it make a sound?',
+    answer: 'This is a philosophical thought experiment. Scientifically, the falling tree creates pressure waves (sound), regardless of an observer. Philosophically, it questions the nature of observation and reality – does sound exist if it\'s not perceived?',
+  },
+  // You can easily add more questions here following the same format:
+   {
+     id: 6,
+     question: 'Another random question?',
+    answer: 'And here is the corresponding answer for it.'
+   }
+]);
+
+// --- Methods ---
+const toggleFaq = (id) => {
+  if (openFaqId.value === id) {
+    openFaqId.value = null;
+  } else {
+    openFaqId.value = id;
+  }
+};
   </script>
   
   <style>
@@ -168,6 +242,92 @@ ul li {
   max-height: 60px;
   object-fit: contain;
   width: auto;
+}
+
+/* --- Container and General Styles --- */
+.faq-section { /* Updated selector */
+  background-color: #1a1a2e; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 40px 20px;
+  font-family: sans-serif;
+  max-width: 900px;
+  margin: 40px auto; /* Added more vertical margin to separate sections */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+}
+
+.faq-title {
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* --- FAQ List and Items --- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* --- FAQ Question Button --- */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  background-color: #c82333;
+  outline: none;
+}
+
+.faq-toggle {
+  font-size: 1.5em;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* --- FAQ Answer Section --- */
+.faq-answer {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* Adjust if needed */
+  opacity: 1;
+  padding: 15px 20px;
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* 🎯 Responsive Styles */
