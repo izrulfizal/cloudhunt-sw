@@ -83,6 +83,32 @@
       <a class="register-btn" href="https://your-registration-form-link.com" target="_blank">Register Here</a>
     </section>
 
+    <section class="faq-section">  
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div v-for="faq in faqs" :key="faq.id" class="faq-item">
+        <button
+          class="faq-question"
+          @click="toggleFaq(faq.id)"
+          :aria-expanded="openFaqId === faq.id"
+          :aria-controls="'faq-answer-' + faq.id"
+        >
+          <span>{{ faq.id }}. {{ faq.question }}</span>
+          <span class="faq-toggle">{{ openFaqId === faq.id ? '-' : '+' }}</span>
+        </button>
+        <div
+          :id="'faq-answer-' + faq.id"
+          class="faq-answer"
+          :class="{ open: openFaqId === faq.id }"
+          role="region"
+          :aria-hidden="openFaqId !== faq.id"
+        >
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+      </section>
+
     <!-- Footer -->
     <footer class="footer">
       <p>&copy; 2025 CloudHunt. All rights reserved.</p>
