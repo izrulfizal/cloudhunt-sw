@@ -147,9 +147,272 @@
     // if it wasn't stopped automatically earlier or if you didn't destructure 'stop'
      stopObserver();
   })
+
+// --- Reactive State ---
+const openFaqId = ref(null);
+
+// --- FAQ Data ---
+// Updated with random questions and answers
+const faqs = ref([
+  {
+    id: 1,
+    question: 'What is the airspeed velocity of an unladen swallow?',
+    answer: 'This is a classic question! The answer depends on whether you mean an African or European swallow. European swallows are estimated to fly at around 11 meters per second, or 24 miles per hour.',
+  },
+  {
+    id: 2,
+    question: 'Why is the sky blue?',
+    answer: 'The sky appears blue because of a phenomenon called Rayleigh scattering. Sunlight reaching Earth\'s atmosphere is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves.',
+  },
+  {
+    id: 3,
+    question: 'Can I use this component in my project?',
+    answer: 'Absolutely! This Vue component is designed to be easily integrated. Just make sure you have Vue set up, copy the code, and adapt the styling or content as needed for your specific use case.',
+  },
+  {
+    id: 4,
+    question: 'How does the accordion effect work?',
+    answer: 'It works by conditionally rendering or styling the answer block. When you click the question, a state variable (`openFaqId`) is updated. CSS rules then use this state (via a class like `.open`) to transition the `max-height` and `opacity` of the answer container, creating the smooth expand/collapse animation.',
+  },
+  {
+    id: 5,
+    question: 'If a tree falls in the forest and no one is around to hear it, does it make a sound?',
+    answer: 'This is a philosophical thought experiment. Scientifically, the falling tree creates pressure waves (sound), regardless of an observer. Philosophically, it questions the nature of observation and reality – does sound exist if it\'s not perceived?',
+  },
+  // You can easily add more questions here following the same format:
+   {
+     id: 6,
+     question: 'Another random question?',
+    answer: 'And here is the corresponding answer for it.'
+   }
+]);
+
+// --- Methods ---
+const toggleFaq = (id) => {
+  if (openFaqId.value === id) {
+    openFaqId.value = null;
+  } else {
+    openFaqId.value = id;
+  }
+};
   </script>
 
   <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.hero {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+.countdown h2 {
+  margin: 10px 0;
+  font-size: 2em;
+}
+.register-btn {
+  background: #e94560;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.section {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  padding: 5px 0;
+  font-size: 1rem;
+}
+.footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: #0f3460;
+  color: white;
+  font-size: 0.9rem;
+}
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.sponsor-logos img {
+  max-height: 60px;
+  object-fit: contain;
+  width: auto;
+}
+
+/* --- Container and General Styles --- */
+.faq-section { /* Updated selector */
+  background-color: #1a1a2e; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 40px 20px;
+  font-family: sans-serif;
+  max-width: 900px;
+  margin: 40px auto; /* Added more vertical margin to separate sections */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+}
+
+.faq-title {
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* --- FAQ List and Items --- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* --- FAQ Question Button --- */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  background-color: #c82333;
+  outline: none;
+}
+
+.faq-toggle {
+  font-size: 1.5em;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* --- FAQ Answer Section --- */
+.faq-answer {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* Adjust if needed */
+  opacity: 1;
+  padding: 15px 20px;
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 🎯 Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .countdown h2 {
+    font-size: 1.5rem;
+  }
+  .section {
+    padding: 30px 15px;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  ul li {
+    font-size: 0.95rem;
+  }
+  .sponsor-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .sponsor-logos img {
+    width: 60%;
+    max-width: 200px;
+  }
+}
+
+.prizes-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.prize-card {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1rem;
+  flex: 1;
+  max-width: 200px;
+}
+
+/* 🎯 Responsive Styles */
+@media (max-width: 768px) {
+  .prizes-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .prize-card {
+    max-width: 100%;
+    width: 90%;
+  }
+}
+
   /* --- Existing Styles (Keep all previous styles) --- */
   body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
   .hero { background-color: #1a1a2e; color: white; padding: 80px 20px; text-align: center; }
