@@ -52,6 +52,7 @@
 
     <!-- Schedule -->
     <section class="section">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <h2>Schedule</h2>
       <ul>
         <li>April 30, 9:00 AM – Kickoff</li>
@@ -59,7 +60,80 @@
         <li>May 1, 10:00 AM – Submission Deadline</li>
         <li>May 1, 2:00 PM – Final Presentation</li>
       </ul>
+
+
+        <div class="container-fluid p-5" style="background-color: #0A1D37;">
+    <h2 class="text-3xl text-white font-bold mb-12">CloudHunt Timeline</h2>
+    <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
+        <div class="flex md:contents flex-row-reverse">
+            <div
+                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Kickoff</h3>
+                <p class="mt-2 leading-6">Description of the event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">April 30, 9:00 AM</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
+                    </div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+        </div>
+
+        <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300"></div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Hacking Starts</h3>
+                <p class="mt-2 leading-6">Description of the event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">April 30, 10:00 AM</span>
+            </div>
+        </div>
+
+        <div class="flex md:contents flex-row-reverse">
+            <div
+                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Submission Deadline</h3>
+                <p class="mt-2 leading-6">Description of the event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">May 1, 10:00 AM</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
+                    </div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+        </div>
+
+        <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                <div class="flex items-center justify-center w-6 h-full">
+                    <div class="w-1 h-full bg-indigo-300"></div>
+                </div>
+                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+                <h3 class="text-lg font-semibold lg:text-xl">Final Presentation</h3>
+                <p class="mt-2 leading-6">Description of the event.</p>
+                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">May 1, 2:00 PM</span>
+            </div>
+        </div>
+
+    </div>
+</div>
     </section>
+
+
+      
+
+
+
 
     <!-- Sponsors -->
     <section class="section sponsors">
@@ -537,3 +611,5 @@ ul li {
     .prize-card { max-width: 90%; width: 100%; min-width: unset; }
   }
   </style>
+
+  
