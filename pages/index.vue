@@ -1,9 +1,14 @@
 <template>
-  <div>
+  <div style="background-color: #27548A;">
     <!-- Hero Section -->
     <section class="hero">
-      <h1>CloudHunt 2025</h1>
-      <p>April 30 – May 1, 2025 | From Command Line to Champion</p>
+      <img
+        src="/images/Main banner.png"
+        alt="CloudHunt Main Banner"
+        class="hero-banner"
+        style="max-width: 60%; height: auto; margin-bottom: 32px; border-radius: 12px;"
+      />
+      <p>April 30 – May 1, 2025</p>
       <div class="countdown">
         <p>Starts in:</p>
         <h2>{{ days }}d {{ hours }}h {{ minutes }}m {{ seconds }}s</h2>
@@ -11,34 +16,53 @@
       <a class="register-btn" href="#register">Register Now</a>
     </section>
 
-      <!-- About Section - MODIFIED with ref and class binding -->
-      <section class="section about-section" ref="aboutSectionRef">
-        <div class="about-container" :class="{ 'animate-in': isAboutSectionVisible }">
-          <div class="about-content">
-            <h2><span class="highlight">About</span> CloudHunt: Your Cloud Adventure Awaits!</h2>
-            <p>
-              Tired of theory? <strong>CloudHunt</strong> throws you straight into the cloud arena! This isn't just another competition; it's a <strong>thrilling hands-on adventure</strong> where you'll tackle real-world challenges at uniquely themed stations.
-            </p>
-            <p>
-              Prepare to:
-            </p>
-            <ul class="skills-list">
-              <li>🚀 <strong>Deploy</strong> applications like a pro.</li>
-              <li>🔒 <strong>Secure</strong> critical infrastructure against threats.</li>
-              <li>📈 <strong>Scale</strong> systems to handle real-world demand.</li>
-              <li>💡 <strong>Solve</strong> complex problems that test your cloud prowess.</li>
-            </ul>
-            <p>
-              Every challenge conquered earns you valuable points, pushing you up the coveted <strong>leaderboard</strong>. It's your chance to prove your skills, learn by doing, and compete for the top spot.
-            </p>
-            <h3>Are you ready to <span class="highlight">hunt the cloud?</span></h3>
-          </div>
-          <div class="about-image">
-            <img src="https://placehold.co/600x400" />
-          </div>
+    <!-- About Section - MODIFIED with ref and class binding -->
+    <section class="section about-section" ref="aboutSectionRef">
+      <div
+        class="about-container"
+        :class="{ 'animate-in': isAboutSectionVisible }"
+      >
+        <div class="about-content">
+          <h2>
+            <span class="highlight">About</span> CloudHunt: Your Cloud Adventure
+            Awaits!
+          </h2>
+          <p>
+            Tired of theory? <strong>CloudHunt</strong> throws you straight into
+            the cloud arena! This isn't just another competition; it's a
+            <strong>thrilling hands-on adventure</strong> where you'll tackle
+            real-world challenges at uniquely themed stations.
+          </p>
+          <p>Prepare to:</p>
+          <ul class="skills-list">
+            <li>🚀 <strong>Deploy</strong> applications like a pro.</li>
+            <li>
+              🔒 <strong>Secure</strong> critical infrastructure against
+              threats.
+            </li>
+            <li>
+              📈 <strong>Scale</strong> systems to handle real-world demand.
+            </li>
+            <li>
+              💡 <strong>Solve</strong> complex problems that test your cloud
+              prowess.
+            </li>
+          </ul>
+          <p>
+            Every challenge conquered earns you valuable points, pushing you up
+            the coveted <strong>leaderboard</strong>. It's your chance to prove
+            your skills, learn by doing, and compete for the top spot.
+          </p>
+          <h3>
+            Are you ready to <span class="highlight">hunt the cloud?</span>
+          </h3>
         </div>
-      </section>
-      <!-- End of Modified About Section -->
+        <div class="about-image">
+          <img src="/images/Main Logo.png" />
+        </div>
+      </div>
+    </section>
+    <!-- End of Modified About Section -->
 
     <!-- Prizes -->
     <section class="section prizes">
@@ -52,91 +76,118 @@
 
     <!-- Schedule -->
     <section class="section">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <h2>Schedule</h2>
-      <ul>
-        <li>April 30, 9:00 AM – Kickoff</li>
-        <li>April 30, 10:00 AM – Hacking Starts</li>
-        <li>May 1, 10:00 AM – Submission Deadline</li>
-        <li>May 1, 2:00 PM – Final Presentation</li>
-      </ul>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-        <div class="container-fluid p-5" style="background-color: #0A1D37;">
-    <h2 class="text-3xl text-white font-bold mb-12">CloudHunt Timeline</h2>
-    <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
-        <div class="flex md:contents flex-row-reverse">
+      <div
+        class="container-fluid p-5"
+        style="
+          background-color: #f8f9fa;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          margin-top: -10px;
+        "
+      >
+        <!-- <h2 class="text-3xl text-white font-bold mb-12">CloudHunt Timeline</h2> -->
+         <h2>Schedule</h2>
+        <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
+          <div class="flex md:contents flex-row-reverse">
             <div
-                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">Kickoff</h3>
-                <p class="mt-2 leading-6">Description of the event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">April 30, 9:00 AM</span>
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto"
+            >
+              <h3 class="text-lg font-semibold lg:text-xl">Kickoff</h3>
+              <p class="mt-2 leading-6">Description of the event.</p>
+              <span
+                class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap"
+                >April 30, 9:00 AM</span
+              >
             </div>
             <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
-                    </div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+              <div class="flex items-center justify-center w-6 h-full">
+                <div
+                  class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300"
+                ></div>
+              </div>
+              <div
+                class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"
+              ></div>
             </div>
-        </div>
+          </div>
 
-        <div class="flex md:contents">
+          <div class="flex md:contents">
             <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300"></div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-indigo-300"></div>
+              </div>
+              <div
+                class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"
+              ></div>
             </div>
-            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">Hacking Starts</h3>
-                <p class="mt-2 leading-6">Description of the event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">April 30, 10:00 AM</span>
-            </div>
-        </div>
-
-        <div class="flex md:contents flex-row-reverse">
             <div
-                class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">Submission Deadline</h3>
-                <p class="mt-2 leading-6">Description of the event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">May 1, 10:00 AM</span>
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto"
+            >
+              <h3 class="text-lg font-semibold lg:text-xl">Hacking Starts</h3>
+              <p class="mt-2 leading-6">Description of the event.</p>
+              <span
+                class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap"
+                >April 30, 10:00 AM</span
+              >
+            </div>
+          </div>
+
+          <div class="flex md:contents flex-row-reverse">
+            <div
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto"
+            >
+              <h3 class="text-lg font-semibold lg:text-xl">
+                Submission Deadline
+              </h3>
+              <p class="mt-2 leading-6">Description of the event.</p>
+              <span
+                class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap"
+                >May 1, 10:00 AM</span
+              >
             </div>
             <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300">
-                    </div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+              <div class="flex items-center justify-center w-6 h-full">
+                <div
+                  class="w-1 h-full bg-indigo-300 rounded-t-full bg-gradient-to-b from-indigo-400 to-indigo-300"
+                ></div>
+              </div>
+              <div
+                class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"
+              ></div>
             </div>
-        </div>
+          </div>
 
-        <div class="flex md:contents">
+          <div class="flex md:contents">
             <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-                <div class="flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-indigo-300"></div>
-                </div>
-                <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"></div>
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-indigo-300"></div>
+              </div>
+              <div
+                class="absolute w-6 h-6 -mt-3 bg-white border-4 border-indigo-400 rounded-full top-1/2"
+              ></div>
             </div>
-            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
-                <h3 class="text-lg font-semibold lg:text-xl">Final Presentation</h3>
-                <p class="mt-2 leading-6">Description of the event.</p>
-                <span class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap">May 1, 2:00 PM</span>
+            <div
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto"
+            >
+              <h3 class="text-lg font-semibold lg:text-xl">
+                Final Presentation
+              </h3>
+              <p class="mt-2 leading-6">Description of the event.</p>
+              <span
+                class="absolute text-sm text-indigo-100/75 -top-5 left-2 whitespace-nowrap"
+                >May 1, 2:00 PM</span
+              >
             </div>
+          </div>
         </div>
-
-    </div>
-</div>
+      </div>
     </section>
 
-
-      
-
-
-
-
     <!-- Sponsors -->
-    <section class="section sponsors">
+    <!-- <section class="section sponsors">
       <h2>Our Sponsors</h2>
       <div class="sponsor-logos">
         <img
@@ -149,40 +200,43 @@
           src="data:image/png;base64,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adJVVaC65557FvVlPTZ+/vnnxccff7z48ccfJ9WsB1UQrOu99tprR5/zxx9/LD777LPFl19+ObnuhfDACsgPPPDAjrfy4osvLsPnlHHjjTcubr/99qVxb1RQqwD7wQcfLMp46pirF6a+vscRILBTQMDSEQRmFqhZioceemhx4MCBya/0ySefLL744ou1jz9y5Mji8OHDk2t++umny0C0adTMzIMPPrjpYWf+vWZcKhRuO4Mz+QX+jx5YQfmJJ55YzjgNx9SA9fDDDy9nraaM8izX8t005uqFTa/r3wkQGBcQsHQHgRkFambpkUce2SpcrS7n9ddfXy4Z9cYtt9yyuOOOO7a+8pMnTy4+//zz0efVLEiFgG3CYBWr2bHjx49vfT3/tieMBaQpAatmvWr2a9vx5ptvLmoWcmzM1QvbXqfHEyCwU0DA0hEEZhR46qmnlnuihqOWkr777rvlnqtaEqwv3fqSbB9X4apCVjtq79Zjjz121t9X3VparLAz3I/VPnBdcOtdb82krPYGXXrppcvatc+nHbUMeerUqRk1z2/pW2+9dbm01xubAtbYc+vzr8+rfKsPaj9WG27rMa+88kp3hnDOXji/2l6dwL9fQMD693+G3sH/qUDvS7W+LF977bWzNrNXuKqZrgoww/HGG28sN6sPRy3frTZYr/6+ZjhqpqMd991331n7viqEvfXWW2c9tne9Fdrqy73dfF/7iGqPVhscK2hciKNmIh999NHRt7YpYPWCa80k1oxiO2oJsg2wYzOPc/XChfgZek8EzrWAgHWuxb3evhFov1THwtUKpPcl3n6x9mYsaiP0q6++OroHqv3CrhmpCgTtnqn2euvfK+CNLVP2wtvbb7+93KB9oY0nn3xydFN6vdd1AasXXOuu0dpf1Rv1GVeYG85k1R2GFcyHY85euNA+P++HwPkQELDOh7rXvOAFrr/++sW99967433WXWFff/312vfehqH2i/jOO+9c3HzzzTtqbNqjU8tONTs2HB9++OHiq6++OvNXtexXG/GHozbZ12b7deOZZ57ZEQTWBYd1deruynZWrjZ3V711o5zr2mumrf5UKKzl17FQuJvGq8+xXmc1KtC2M0zrAlaFpeFdnnWNL7zwwtpLqaXICmbD8dJLL+2YSZyrF3Zj5DkECJwtIGDpCgIzCLRfyvXlP2X5rELG8GiECgvD4xXaL+updZ9++ukdd761S4q1Yb72gQ1HzYr9/vvva3WOHTu2PHtrNaaEh17BXqCoWnUNY0cVjO0/2hQ4t/m4e0G5ZpLaPXDrAlYbQseWaIfX1ZvNrDtA607Q1ZirF7bx8VgCBMYFBCzdQWAGgXYmqmauagZrr6P9sq5ZnnfeeWdj2TYItcGs/bKuPVc1Y7Jp9I4HqACym0NIH3/88bP2oI3tLavrqpBTIWs46kyujz76aNNlT/r3OqeqPsfhUl1t5K/XqM9hOMYCVh3JUHceDkdd35SzwzaF4rl6YRKOBxEgsFFAwNpI5AEEthd49tlndzypNpUPDw+tzey1LFZLTTVDVX82neJeM0UVlIbjxIkTi2+++WbjBfaC0PPPP3/mee2Xdc2c1enkm0ZvpqUC35Szm9raYzNS7XJmPa/3fmq2rWa8UqOWVWt5dTVWM08VuKYGrN7M3KYN8avXa0Px8P3N2QspP3UI7HcBAWu/d4D3Hxfo7WeqL9Wazah9MxUkeudM1axS7XsaLgMNL6535966IxeGz+0tdQ2/6NtA2C5HrUNqnzt1hqZXs36C5ujRozv+qZYKX3755TMBdCyI7XbmrHcdbYAb3k25TcBqbwTYZgm1XWYezirO2Qvx/0MoSGCfCghY+/SD97bnE2i//OpLtZYIb7rppkkvWncb1sxUOwvUuxtt6mxIL/StwlkthdVdcsOxzZlWbcAaO35g0ptfLJYb8oczR/W84UGmvaXBKSffT3393uxQ3fG32nC/TcCqGwfKfjWmLr3W49tN7MNwNlcvTDXyOAIENgsIWJuNPILAVgLrDqTcplA7I9Nbbhou862r3Zv1WYWGXqCo5cFaJpwy2r1CtWRZAXG3o5ZNaz9WO8v3/vvvL+/Gq9ml4Vi3T2vba6jXrLA5PPS1fT/bBKw2LNaG/TpXbMpYt6w7Vy9MuS6PIUBgmoCANc3JowhMFuh9+Q2fXLMYtZ+nNoJX8KnQ0B4wWo9v9xTVjzrfcMMNZ0pts9zUCwWrpby6a/H+++/f8f62uROvPT9r6sb7daA123fXXXfteEi93zZ01d9VYKlZv8Rof86m6tby5HBsE7Dajftjp/P3rr2O46hZrOGo4x3qPc/VCwlDNQgQ+K+AgKUTCIQF6oTzWibsjbGzpXp7pOr5w8e3+3mmHtGwuo52KW91LleFtvrCHo4pRzSsHt8ewrnbs7Baryk/jFyzWvWTQ4nR29fUO0l/m4DV3k065YiG1XvphczVjOVcvZBwVIMAAQFLDxCYRaB3wnm90KZ9QnUGVv30yXAMT/Betydn0xupJa+aaRqO1anrvf1Ze5nBqgNM686/vY665gooBw8e7JZKzJStCveWJetmg9rs345tAlZ7/EX97FGFtimjt9S8Clhz9cKU6/IYAgSmCZjBmubkUQQmC7TLN/XEqUtD7Qbu4SxV7w67qXuwagmylquGYzVL1dvkvs1RC+0erLFgMhlw8MCxmb1yqXO62p/72c1r1HNa93VBaJuA1W5y3+YoicOHD+/Yb3YuemG3fp5HgMDZAgKWriAQFuidij7lZ2fqMnqzFqt9N72wMTVgHTp0aFH7i4Zj+Nyx5cMpNHt57qb6vVm9ek5vb9SmWmP/XueR1azjcNQs3Ni5ZBWw2lPv6+DQCkCrUTNf9fz2qIVtrrtdah4+d85e2K2j5xEgsFNAwNIRBMIC7cxDlZ+6V6h38vfqkNLe3X69PUK9t7Nuuake3x40OjUQ9ma/Uj/43Lujb/jeUqfjj82S7aUtjh8/vjxaor3hYZsbE9rZr+Fy8Zy9sJf37bkECPxPQMDSDQTCAr0ZkalLbr0fZl4d11B7kWo5bjimHgi6aSalvRNw6tEHvXDS/ijxbnnrzsbh7zL26qyCzG5fo543Z8Cqma6a0RyOqQeithvkh3vO5uyFvVh6LgECApYeIDCbQO/Lb+q+pHV3jtUFt/udpt6V1n5Z1513Nau2Gu0de1PvUGyD2zbnPK37AKaGnlqGq2MU9rIXa+prbdMwq+DX+ymhKb3Q2+fVzoLO1QvbvE+PJUBgXMAMlu4gMIPAph/qHXvJdtam3bPT++mVOs19XcDobXBvl/F6RzVMmR1qZ74SdxCO3T1YdzbWDQQVWoZj6u8mjplXmKk7KXs/XzT2nHY/Wx3MutqDVZ/F6dOnzzy1DbdTbnjYtKRbxefqhRn+76AkgX0pIGDty4/dm55boJ3ZqdfbtDepjgqoL+PhqC/qet5q9PbebNovVUc/1Gbx1RjbB9Tuw9p0pEAvBEzdE7bOv3f+1Wq/VS8sVq3hT9nM/dlW/XZj/7qfLOodPNv++Pfwmnt7z3qfxZy9cC4MvQaBC11AwLrQP2Hv77wI9JaGajmrZoXqy7IdNWtz7Nix5cnuw9Hbr9Me7LkuvPWC3thBoO0p5lV37HcFe0uZ29whN/ah9Oq2y4C94ypq9qiWCod38s35wW8TsHo3AtR7qmMy2jsVa3m5zs5qT/avc8VqdrAdc/XCnHZqE9gvAgLWfvmkvc9zLtALLHURp06dWtTv29X+qfoirY3cR48e3fH7d/W4sd/0692lWI+vowJq03uFjFryq7BSsxzDUbNXFUR6RxD0ZkTquTWLVj/+XEtbda114nlt5G/HXmeRxn6DsHeDQHuA5+o6h7N9c37g2wSsuo7erFx9TidPnlz+EHiFsPrMalN8/fdwDO8ebN/TXL0wp53aBPaLgIC1Xz5p7/OcC9RSTy35tV+YUy5k00GavYAxpe6m0+R7Z3hNqdsuZU55TvuY9oeR69/HTmsfWypc/fzPbl5/m+dsG7A2nUq/7rU3LbvO1QvbeHgsAQJnCwhYuoLAjAK15FMzWbWJeuqoGYtaSqw78sZGhbYKJDXrM3Vs2qu1qjM28zb2OnWkQ+0p2sudfLtZ9uvN3qR//HnsPW8bsKpO7YMr220200+ZFZyzF6b2lscRICBg6QEC50Wgdx5S70Jq+bCW46aM+qKuuw7rlPZ1o2bDauaqlhCnjiNHjiwq9KwLAxVmahmzZo32OtoN9lXvxIkTy/rrRvsTN/XYvd5VOOW97CZgVd2aeaubDtq9du1r1k/q1LEMtYw8ZczZC1Ne32MIEBCw9ACB8yZQX4IVhupPzWjVslFtDK8v0Vpiqz9jP8+y7qJrBqMCUe2hqi/wep2qW1/Sdd5Vb3P0FISqU3cK1r6rmimr663rq7p1zav9XlNqecxOgfqsKsDWzRCrJeT6zGr2skL28JiHbezm6oVtrsFjCRD4r4AlQp1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgBpY0qkAAAA20lEQVQBAgQIECAgYOkBAgQIECBAgEBYQMAKgypHgAABAgQIEBCw9AABAgQIECBAICwgYIVBlSNAgAABAgQICFh6gAABAgQIECAQFhCwwqDKESBAgAABAgQELD1AgAABAgQIEAgLCFhhUOUIECBAgAABAgKWHiBAgAABAgQIhAUErDCocgQIECBAgAABAUsPECBAgAABAgTCAgJWGFQ5AgQIECBAgICApQcIECBAgAABAmEBASsMqhwBAgQIECBAQMDSAwQIECBAgACBsICAFQZVjgABAgQIECDwH/pv5wRe/E2jAAAAAElFTkSuQmCC"
           alt="Sponsor 3" />
       </div>
-    </section>
+    </section> -->
 
     <!-- Register -->
-    <section id="register" class="section">
+    <!-- <section id="register" class="section">
       <h2>Ready to Code?</h2>
       <a class="register-btn" href="https://your-registration-form-link.com" target="_blank">Register Here</a>
-    </section>
+    </section> -->
 
-    <section class="faq-section">  
-    <h2 class="faq-title">Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div v-for="faq in faqs" :key="faq.id" class="faq-item">
-        <button
-          class="faq-question"
-          @click="toggleFaq(faq.id)"
-          :aria-expanded="openFaqId === faq.id"
-          :aria-controls="'faq-answer-' + faq.id"
-        >
-          <span>{{ faq.id }}. {{ faq.question }}</span>
-          <span class="faq-toggle">{{ openFaqId === faq.id ? '-' : '+' }}</span>
-        </button>
-        <div
-          :id="'faq-answer-' + faq.id"
-          class="faq-answer"
-          :class="{ open: openFaqId === faq.id }"
-          role="region"
-          :aria-hidden="openFaqId !== faq.id"
-        >
-          <p>{{ faq.answer }}</p>
+    <!-- FAQ -->
+    <section class="faq-section section">
+      <!-- <h2 class="faq-title">Frequently Asked Questions</h2> -->
+       <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div v-for="faq in faqs" :key="faq.id" class="faq-item">
+          <button
+            class="faq-question"
+            @click="toggleFaq(faq.id)"
+            :aria-expanded="openFaqId === faq.id"
+            :aria-controls="'faq-answer-' + faq.id"
+          >
+            <span>{{ faq.id }}. {{ faq.question }}</span>
+            <span class="faq-toggle">{{
+              openFaqId === faq.id ? "-" : "+"
+            }}</span>
+          </button>
+          <div
+            :id="'faq-answer-' + faq.id"
+            class="faq-answer"
+            :class="{ open: openFaqId === faq.id }"
+            role="region"
+            :aria-hidden="openFaqId !== faq.id"
+          >
+            <p>{{ faq.answer }}</p>
+          </div>
         </div>
       </div>
-    </div>
-      </section>
-      
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -191,63 +245,65 @@
   </div>
 </template>
 
- <script setup>
-  import { ref, onMounted, onUnmounted } from 'vue'
-  import { useIntersectionObserver } from '@vueuse/core'
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
 
-  // Countdown Logic
-  const days = ref(0)
-  const hours = ref(0)
-  const minutes = ref(0)
-  const seconds = ref(0)
-  const targetDate = new Date('2025-04-30T09:00:00').getTime()
-  const intervalId = ref(null);
+// Countdown Logic
+const days = ref(0);
+const hours = ref(0);
+const minutes = ref(0);
+const seconds = ref(0);
+const targetDate = new Date("2025-04-30T09:00:00").getTime();
+const intervalId = ref(null);
 
-  const updateCountdown = () => {
-    const now = new Date().getTime()
-    const distance = targetDate - now
-    if (distance > 0) {
-      days.value = Math.floor(distance / (1000 * 60 * 60 * 24))
-      hours.value = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      seconds.value = Math.floor((distance % (1000 * 60)) / 1000)
-    } else {
-      days.value = hours.value = minutes.value = seconds.value = 0
-      if (intervalId.value) clearInterval(intervalId.value);
-    }
+const updateCountdown = () => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+  if (distance > 0) {
+    days.value = Math.floor(distance / (1000 * 60 * 60 * 24));
+    hours.value = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    seconds.value = Math.floor((distance % (1000 * 60)) / 1000);
+  } else {
+    days.value = hours.value = minutes.value = seconds.value = 0;
+    if (intervalId.value) clearInterval(intervalId.value);
   }
+};
 
-  // Scroll Animation Logic
-  const aboutSectionRef = ref(null)
-  const isAboutSectionVisible = ref(false)
+// Scroll Animation Logic
+const aboutSectionRef = ref(null);
+const isAboutSectionVisible = ref(false);
 
-  // Keep the stop function reference if you might need it later, but don't call it in the callback
-   const { stop: stopObserver } = useIntersectionObserver(
-    aboutSectionRef,
-    ([{ isIntersecting }]) => {
-      // Directly update the ref based on intersection status
-      isAboutSectionVisible.value = isIntersecting;
-      // DO NOT stop the observer here if you want it to trigger on exit too
-      // stopObserver();
-    },
-    {
-      threshold: 0.15, // Trigger when 15% is visible (adjust as needed)
-    }
-  )
+// Keep the stop function reference if you might need it later, but don't call it in the callback
+const { stop: stopObserver } = useIntersectionObserver(
+  aboutSectionRef,
+  ([{ isIntersecting }]) => {
+    // Directly update the ref based on intersection status
+    isAboutSectionVisible.value = isIntersecting;
+    // DO NOT stop the observer here if you want it to trigger on exit too
+    // stopObserver();
+  },
+  {
+    threshold: 0.15, // Trigger when 15% is visible (adjust as needed)
+  }
+);
 
-  onMounted(() => {
-    updateCountdown() // Initial call
-    intervalId.value = setInterval(updateCountdown, 1000)
-  })
+onMounted(() => {
+  updateCountdown(); // Initial call
+  intervalId.value = setInterval(updateCountdown, 1000);
+});
 
-  onUnmounted(() => {
-    if (intervalId.value) {
-        clearInterval(intervalId.value)
-    }
-    // It's good practice to stop the observer when the component unmounts
-    // if it wasn't stopped automatically earlier or if you didn't destructure 'stop'
-     stopObserver();
-  })
+onUnmounted(() => {
+  if (intervalId.value) {
+    clearInterval(intervalId.value);
+  }
+  // It's good practice to stop the observer when the component unmounts
+  // if it wasn't stopped automatically earlier or if you didn't destructure 'stop'
+  stopObserver();
+});
 
 // --- Reactive State ---
 const openFaqId = ref(null);
@@ -257,35 +313,41 @@ const openFaqId = ref(null);
 const faqs = ref([
   {
     id: 1,
-    question: 'What is the airspeed velocity of an unladen swallow?',
-    answer: 'This is a classic question! The answer depends on whether you mean an African or European swallow. European swallows are estimated to fly at around 11 meters per second, or 24 miles per hour.',
+    question: "What is the airspeed velocity of an unladen swallow?",
+    answer:
+      "This is a classic question! The answer depends on whether you mean an African or European swallow. European swallows are estimated to fly at around 11 meters per second, or 24 miles per hour.",
   },
   {
     id: 2,
-    question: 'Why is the sky blue?',
-    answer: 'The sky appears blue because of a phenomenon called Rayleigh scattering. Sunlight reaching Earth\'s atmosphere is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves.',
+    question: "Why is the sky blue?",
+    answer:
+      "The sky appears blue because of a phenomenon called Rayleigh scattering. Sunlight reaching Earth's atmosphere is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves.",
   },
   {
     id: 3,
-    question: 'Can I use this component in my project?',
-    answer: 'Absolutely! This Vue component is designed to be easily integrated. Just make sure you have Vue set up, copy the code, and adapt the styling or content as needed for your specific use case.',
+    question: "Can I use this component in my project?",
+    answer:
+      "Absolutely! This Vue component is designed to be easily integrated. Just make sure you have Vue set up, copy the code, and adapt the styling or content as needed for your specific use case.",
   },
   {
     id: 4,
-    question: 'How does the accordion effect work?',
-    answer: 'It works by conditionally rendering or styling the answer block. When you click the question, a state variable (`openFaqId`) is updated. CSS rules then use this state (via a class like `.open`) to transition the `max-height` and `opacity` of the answer container, creating the smooth expand/collapse animation.',
+    question: "How does the accordion effect work?",
+    answer:
+      "It works by conditionally rendering or styling the answer block. When you click the question, a state variable (`openFaqId`) is updated. CSS rules then use this state (via a class like `.open`) to transition the `max-height` and `opacity` of the answer container, creating the smooth expand/collapse animation.",
   },
   {
     id: 5,
-    question: 'If a tree falls in the forest and no one is around to hear it, does it make a sound?',
-    answer: 'This is a philosophical thought experiment. Scientifically, the falling tree creates pressure waves (sound), regardless of an observer. Philosophically, it questions the nature of observation and reality – does sound exist if it\'s not perceived?',
+    question:
+      "If a tree falls in the forest and no one is around to hear it, does it make a sound?",
+    answer:
+      "This is a philosophical thought experiment. Scientifically, the falling tree creates pressure waves (sound), regardless of an observer. Philosophically, it questions the nature of observation and reality – does sound exist if it's not perceived?",
   },
   // You can easily add more questions here following the same format:
-   {
-     id: 6,
-     question: 'Another random question?',
-    answer: 'And here is the corresponding answer for it.'
-   }
+  {
+    id: 6,
+    question: "Another random question?",
+    answer: "And here is the corresponding answer for it.",
+  },
 ]);
 
 // --- Methods ---
@@ -296,15 +358,15 @@ const toggleFaq = (id) => {
     openFaqId.value = id;
   }
 };
-  </script>
+</script>
 
-  <style>
+<style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 .hero {
-  background-color: #1a1a2e;
+  background-color: #27548A !important;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -364,17 +426,30 @@ ul li {
   object-fit: contain;
   width: auto;
 }
+.hero-banner {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* --- Container and General Styles --- */
-.faq-section { /* Updated selector */
-  background-color: #1a1a2e; /* Dark background */
+.faq-section {
+  /* Updated selector */
   color: #ffffff; /* White text */
   padding: 40px 20px;
   font-family: sans-serif;
-  max-width: 900px;
+  width: 800px !important;
   margin: 40px auto; /* Added more vertical margin to separate sections */
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-top: -10px;
+        
 }
 
 .faq-title {
@@ -403,7 +478,7 @@ ul li {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #dc3545;
+  background-color: #f9bb02;
   color: #ffffff;
   padding: 15px 20px;
   border: none;
@@ -416,7 +491,7 @@ ul li {
 
 .faq-question:hover,
 .faq-question:focus {
-  background-color: #c82333;
+  background-color: #b48802;
   outline: none;
 }
 
@@ -435,7 +510,8 @@ ul li {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out,
+    opacity 0.4s ease-in-out;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -514,103 +590,284 @@ ul li {
   }
 }
 
-  /* --- Existing Styles (Keep all previous styles) --- */
-  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
-  .hero { background-color: #1a1a2e; color: white; padding: 80px 20px; text-align: center; }
-  .hero h1 { font-size: 2.5rem; }
-  .hero p { font-size: 1.2rem; }
-  .countdown h2 { margin: 10px 0; font-size: 2em; }
-  .register-btn { background: #e94560; padding: 12px 25px; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; display: inline-block; transition: background-color 0.3s ease; }
-  .register-btn:hover { background-color: #c73850; }
-  .section { padding: 60px 20px; max-width: 960px; margin: auto; }
-  .section h2 { margin-bottom: 30px; font-size: 2rem; text-align: center; color: #162447; }
-  .about-section > h2 { text-align: center; margin-bottom: 40px; }
-  ul { list-style-type: none; padding: 0; }
-  ul li { padding: 8px 0; font-size: 1rem; }
-  .footer { text-align: center; padding: 30px 10px; background: #0f3460; color: white; font-size: 0.9rem; margin-top: 40px; }
-  .sponsor-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
-  .sponsor-logos img { max-height: 70px; object-fit: contain; width: auto; opacity: 0.8; transition: opacity 0.3s ease; }
-  .sponsor-logos img:hover { opacity: 1; }
+/* --- Existing Styles (Keep all previous styles) --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+.countdown h2 {
+  margin: 10px 0;
+  font-size: 2em;
+}
+.register-btn {
+  background: #febd02;
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.register-btn:hover {
+  background-color: #b48700;
+}
+.section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+  color: #162447;
+}
+.about-section > h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  padding: 8px 0;
+  font-size: 1rem;
+}
+.footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: #0f3460;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.sponsor-logos img {
+  max-height: 70px;
+  object-fit: contain;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.sponsor-logos img:hover {
+  opacity: 1;
+}
 
-  /* About Section Styles */
-  .about-section h3 { font-size: 1.4rem; color: #162447; margin-top: 25px; text-align: left; }
-  .about-container { display: flex; align-items: center; gap: 40px; background-color: #f8f9fa; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); margin-top: -10px; }
-  .about-content { flex: 1.5; color: #333; }
-  .about-content h2 { text-align: left; font-size: 1.8rem; margin-bottom: 20px; color: #162447; }
-  .about-content p { margin-bottom: 15px; font-size: 1.05rem; }
-  .about-image { flex: 1; text-align: center; }
-  .about-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); display: block; margin: 0 auto; }
-  .highlight { color: #e94560; font-weight: bold; }
-  .skills-list { list-style-type: none; padding-left: 0; margin-top: 10px; margin-bottom: 20px; }
-  .skills-list li { padding: 5px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
-  .skills-list li strong { color: #162447; }
+/* About Section Styles */
+.about-section h3 {
+  font-size: 1.4rem;
+  color: #162447;
+  margin-top: 25px;
+  text-align: left;
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-top: -10px;
+}
+.about-content {
+  flex: 1.5;
+  color: #333;
+}
+.about-content h2 {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #162447;
+}
+.about-content p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+.about-image {
+  flex: 1;
+  text-align: center;
+  background-color: rgb(39, 84, 138);
+  border-radius: 8px;
+}
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  padding:32px;
 
-  /* Prizes Styles */
-  .prizes-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-  .prize-card { background: #ffffff; padding: 20px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center; font-size: 1rem; flex: 1; min-width: 180px; max-width: 220px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .prize-card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); }
+}
+.highlight {
+  color: #e94560;
+  font-weight: bold;
+}
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.skills-list li {
+  padding: 5px 0;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skills-list li strong {
+  color: #162447;
+}
 
-  /* --- START: Scroll Animation CSS (Modified) --- */
+/* Prizes Styles */
+.prizes-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.prize-card {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.prize-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
 
-  /* Base state (Hidden): Applied when 'animate-in' class is NOT present */
-  /* Define the transition properties here so they apply on enter and exit */
-  .about-container .about-content > *,
-  .about-container .about-image img {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Apply smooth transition for both in and out */
-      /* Delays are removed from base state, applied only on '.animate-in' */
+/* --- START: Scroll Animation CSS (Modified) --- */
+
+/* Base state (Hidden): Applied when 'animate-in' class is NOT present */
+/* Define the transition properties here so they apply on enter and exit */
+.about-container .about-content > *,
+.about-container .about-image img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Apply smooth transition for both in and out */
+  /* Delays are removed from base state, applied only on '.animate-in' */
+}
+
+/* Visible State: Applied when 'animate-in' class IS present */
+.about-container.animate-in .about-content h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s; /* Stagger delay IN */
+}
+.about-container.animate-in .about-content p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Stagger delay IN */
+}
+.about-container.animate-in .about-content .skills-list {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s; /* Stagger delay IN */
+}
+.about-container.animate-in .about-content h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s; /* Stagger delay IN */
+}
+.about-container.animate-in .about-image img {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s; /* Stagger delay IN */
+}
+/* --- END: Scroll Animation CSS --- */
+
+/* Responsive Styles (Existing - No changes needed here for animation logic) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
   }
-
-  /* Visible State: Applied when 'animate-in' class IS present */
-  .about-container.animate-in .about-content h2 {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.1s; /* Stagger delay IN */
+  .hero p {
+    font-size: 1rem;
   }
-  .about-container.animate-in .about-content p {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.2s; /* Stagger delay IN */
+  .countdown h2 {
+    font-size: 1.5rem;
   }
-  .about-container.animate-in .about-content .skills-list {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.3s; /* Stagger delay IN */
+  .section {
+    padding: 40px 15px;
   }
-  .about-container.animate-in .about-content h3 {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.4s; /* Stagger delay IN */
+  .section h2 {
+    font-size: 1.7rem;
   }
-  .about-container.animate-in .about-image img {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.25s; /* Stagger delay IN */
+  .about-section > h2 {
+    font-size: 1.7rem;
   }
-  /* --- END: Scroll Animation CSS --- */
-
-
-  /* Responsive Styles (Existing - No changes needed here for animation logic) */
-  @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 1rem; }
-    .countdown h2 { font-size: 1.5rem; }
-    .section { padding: 40px 15px; }
-    .section h2 { font-size: 1.7rem; }
-    .about-section > h2 { font-size: 1.7rem; }
-    .about-content > h2 { font-size: 1.6rem; text-align: center; }
-    ul li { font-size: 0.95rem; }
-    .sponsor-logos { flex-direction: column; align-items: center; gap: 25px; }
-    .sponsor-logos img { max-height: 60px; width: 60%; max-width: 180px; }
-    .about-container { flex-direction: column-reverse; padding: 30px; gap: 30px; }
-    .about-section h3 { text-align: center; }
-    .about-content { text-align: center; }
-    .about-content .skills-list { text-align: left; display: inline-block; padding-left: 15px; }
-    .about-image { max-width: 90%; margin-top: 15px; }
-    .prizes-container { flex-direction: column; align-items: center; gap: 15px; }
-    .prize-card { max-width: 90%; width: 100%; min-width: unset; }
+  .about-content > h2 {
+    font-size: 1.6rem;
+    text-align: center;
   }
-  </style>
-
-  
+  ul li {
+    font-size: 0.95rem;
+  }
+  .sponsor-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .sponsor-logos img {
+    max-height: 60px;
+    width: 60%;
+    max-width: 180px;
+  }
+  .about-container {
+    flex-direction: column-reverse;
+    padding: 30px;
+    gap: 30px;
+  }
+  .about-section h3 {
+    text-align: center;
+  }
+  .about-content {
+    text-align: center;
+  }
+  .about-content .skills-list {
+    text-align: left;
+    display: inline-block;
+    padding-left: 15px;
+  }
+  .about-image {
+    max-width: 90%;
+    margin-top: 15px;
+  }
+  .prizes-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .prize-card {
+    max-width: 90%;
+    width: 100%;
+    min-width: unset;
+  }
+}
+</style>
